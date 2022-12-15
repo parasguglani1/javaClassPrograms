@@ -2,6 +2,9 @@ package day2.Assignment;
 
 class Parent extends Grandparent {
 
+    static {
+        System.out.println("static - parent");
+    }
     {
         System.out.println("instance - parent");
     }
@@ -10,9 +13,7 @@ class Parent extends Grandparent {
         System.out.println("constructor - parent");
     }
 
-    static {
-        System.out.println("static - parent");
-    }
+
 }
 
 class Grandparent {
@@ -30,15 +31,19 @@ class Grandparent {
 }
 
 class Child extends Parent {
-    public Child() {
-        System.out.println("constructor - child");
-    }
 
     static {
         System.out.println("static - child");
     }
+
+
+
     {
         System.out.println("instance - child");
+    }
+
+    public Child() {
+        System.out.println("constructor - child");
     }
 }
 
