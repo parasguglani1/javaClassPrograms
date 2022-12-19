@@ -46,7 +46,7 @@ public class Q6 {
         int[] arr3 = new int[arr.length - 1];
         int index = 5;
         int value = 11;
-        int index2 = 5;
+
 
         // insert
         arr2 = insert(arr, index, value);
@@ -54,9 +54,6 @@ public class Q6 {
 
         System.out.println();
 
-        // delete
-        arr3 = delete(arr, index2);
-        display(arr3);
 
     }
 

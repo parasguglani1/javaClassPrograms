@@ -2,7 +2,7 @@ package day5.Assignment;
 
 public class Q2 {
     // rorate array by k
-    public static void rotate(int[] arr, int k) {
+    public static void rotateQ2(int[] arr, int k) {
         int n = arr.length;
         int[] arr2 = new int[n];
         for (int i = 0; i < n; i++) {
@@ -20,11 +20,11 @@ public class Q2 {
         int n = arr.length;
         int k = 3;
 
-        rotate(arr, k);
+        rotateQ2(arr, k);
         for (int i = 0; i < n; i++) {
             System.out.print(arr[i] + " ");
         }
-        
+
 
     }
 
