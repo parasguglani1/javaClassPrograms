@@ -44,6 +44,7 @@ public class stringBufferTest {
         }
         S11.append(" guglani");
         System.out.println(S11);
+        sc.close();
 
     }
 

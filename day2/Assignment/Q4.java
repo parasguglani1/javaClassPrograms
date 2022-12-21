@@ -50,6 +50,8 @@ class Child extends Parent {
 public class Q4 {
     public static void main(String[] args) {
         Child c = new Child();
+
+        System.out.println(c);
         // output
         /*
          * static - grandparent
@@ -63,4 +65,5 @@ public class Q4 {
          * constructor - child
          */
     }
+
 }

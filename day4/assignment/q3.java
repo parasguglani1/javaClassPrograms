@@ -37,6 +37,6 @@ public class q3 {
             }
             word1 = sc.nextLine();
         } while (!word1.equals("done"));
-
+sc.close();
     }
 }

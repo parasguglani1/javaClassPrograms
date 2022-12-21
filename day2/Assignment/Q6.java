@@ -10,6 +10,7 @@ public class Q6 {
         String str=s.substring(3,7);
         System.out.println(str);
 
+        sc.close();
 
     }
 }

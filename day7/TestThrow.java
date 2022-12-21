@@ -1,10 +1,12 @@
 package day7;
 
+import java.io.FileNotFoundException;
+
 public class TestThrow {
     // checknum
-    public static void checknum(int num) throws Exception {
+    public static void checknum(int num) throws Exception  {
         if (num < 0) {
-            throw new Exception("This is an exception");
+            throw new FileNotFoundException("This is an exception");
 
         } else {
             System.out.println("This is not an exception");

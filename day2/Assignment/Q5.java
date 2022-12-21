@@ -26,6 +26,7 @@ public class Q5 {
             x[i] = sc.nextInt();
             System.out.printf("%-15s%03d %n", str[i], x[i]);
         }
+        sc.close();
 
     }
 }

@@ -13,6 +13,7 @@ public class Q4_2 {
             System.out.println("Double: " + d);
             System.out.println("Int: " + i);
 
+            sc.close();
 
     }
 }

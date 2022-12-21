@@ -18,6 +18,8 @@ public class Q1_sortwithoutstringmethod {
             }
         }
         System.out.println(ch);
+sc.close();
+
     }
 
 }

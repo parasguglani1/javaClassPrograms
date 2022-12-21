@@ -1,29 +1,39 @@
 package day5.Assignment;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Assignment3 {
     public static int[] Q1sortbinary(int[] arr) {
-        int n = arr.length;
-        int count0 = 0;
-        int count1 = 0;
-        for (int i = 0; i < n; i++) {
-            if (arr[i] == 0) {
-                count0++;
-            } else {
-                count1++;
+        try {
+            int n = arr.length;
+            int count0 = 0;
+            int count1 = 0;
+            for (int i = 0; i < n; i++) {
+                if (arr[i] == 0) {
+                    count0++;
+                } else {
+                    count1++;
+                }
             }
+            for (int i = 0; i < count0; i++) {
+                arr[i] = 0;
+            }
+            for (int i = 0; i < count1; i++) {
+                arr[i] = 1;
+            }
+            return arr;
+        } catch (ArrayIndexOutOfBoundsException e) {
+            // code to handle the ArrayIndexOutOfBoundsException
+            System.out.println("The index is out of bounds. Please provide a valid index.");
+            return null;
         }
-        for (int i = 0; i < count0; i++) {
-            arr[i] = 0;
-        }
-        for (int i = 0; i < count1; i++) {
-            arr[i] = 1;
-        }
-        return arr;
     }
 
-    public static void Q2rotate(int[] arr, int k) {
+    public static void Q2rotate(int[] arr, int k) throws IllegalArgumentException {
+        if (k < 0) {
+            throw new IllegalArgumentException("k must be non-negative");
+        }
         int n = arr.length;
         int[] arr2 = new int[n];
         for (int i = 0; i < n; i++) {
@@ -98,7 +108,7 @@ public class Assignment3 {
         int n = arr.length;
         // if index is greater than array length
         if (index > n) {
-            System.out.println("Index out of bounds");
+            throw new ArrayIndexOutOfBoundsException("Index is greater than array length");
         }
         // if index is less than array length
         else {
@@ -168,7 +178,7 @@ public class Assignment3 {
 
     }
 
-    //Q10 linear search
+    // Q10 linear search
     public static int Q10linearSearch(int[] arr, int element) {
         int n = arr.length;
         for (int i = 0; i < n; i++) {
@@ -189,7 +199,7 @@ public class Assignment3 {
 
     // array input function
 
-    public static int[] arrayInput() throws Exception {
+    public static int[] arrayInput() throws InputMismatchException {
         Scanner scn = new Scanner(System.in);
         int n = scn.nextInt();
         int[] arr = new int[n];
@@ -208,9 +218,6 @@ public class Assignment3 {
     }
 
     public static void main(String[] args) {
-        // sort binary array in linear time
-        // int[] arr = { 0, 1, 0, 1, 0, 0, 1, 1, 1, 0 };
-        // handle array input exception
 
         int[] arr;
         try {
@@ -221,6 +228,7 @@ public class Assignment3 {
 
             int k = 3;
             Q2rotate(arr, k);
+            System.out.println("Array after rotation by " + k + " is: ");
             arrayPrint(arr);
 
             Q3smallestLargest(arr, k);
@@ -232,25 +240,37 @@ public class Assignment3 {
             int index = 3;
             int element = 10;
             Q6insert(arr, index, element);
+            // print array after insertion
+            System.out.println("Array after insertion of " + element + " at index " + index + " is: ");
             arrayPrint(arr);
 
             Q6delete(arr, index);
+            System.out.println("Array after deletion of element at index " + index + " is: ");
+
             arrayPrint(arr);
+
+            // cyclically permute
 
             Q7cyclicallyPermute(arr, k);
+            System.out.println("Array after circular permutation by " + k + " is: ");
+
             arrayPrint(arr);
 
-            int missing =Q8findMissing(arr);
+            int missing = Q8findMissing(arr);
+
+            System.out.println("Missing element is: ");
+
             System.out.println(missing);
 
             int[] Leaders = Q9leaders(arr);
+
+            System.out.println("Leaders in the array are: ");
             arrayPrint(Leaders);
 
             int element2 = 10;
             int index2 = Q10linearSearch(arr, element2);
+            System.out.println("Element " + element2 + " is found at index: ");
             System.out.println(index2);
-            
-
 
         } catch (Exception e) {
             System.out.println("array input exception");
