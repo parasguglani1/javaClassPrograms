@@ -3,6 +3,10 @@ package day8.LibraryManagementSystem;
 public
 
 class library {
+    //constructor
+    public library() {
+        System.out.println("Library constructor");
+    }
 
     Book[] books = new Book[1000];
     int count = 0;
