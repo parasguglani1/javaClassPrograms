@@ -5,11 +5,25 @@ class User extends library {
     void booksAvailable() {
     };
 
-   //decrease quantity of book by 1
+    // decrease quantity of book by 1
     void rentBook(String Book) {
     };
 
     // increase quantity of book by 1
     void returnBook(String Book) {
     };
+
+    // register user
+    void registerUser(String name, String email, String password) {
+
+
+    }
+
+    // login user
+    void loginUser(String email, String password) {
+
+
+
+    }
+
 }
